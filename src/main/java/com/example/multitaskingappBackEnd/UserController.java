@@ -1,12 +1,15 @@
 package com.example.multitaskingappBackEnd;
 
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.imageio.ImageTranscoder;
+
 @RestController
 @CrossOrigin(value = "*")
-@RequestMapping(path="/demo")
+@RequestMapping(path="/user")
 public class UserController {
 
     @Autowired
@@ -18,7 +21,11 @@ public class UserController {
         user1.setName(users.getName());
         user1.setEmail(users.getEmail());
         return ResponseEntity.ok(userRepository.save(user1));
+    }
 
+    @GetMapping(path = "/all")
+    public ResponseEntity<Iterable> getAllUsers(){
+        return ResponseEntity.ok(userRepository.findAll());
     }
 
 

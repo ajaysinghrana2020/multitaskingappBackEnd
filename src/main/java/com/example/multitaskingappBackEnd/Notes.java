@@ -48,10 +48,22 @@ public class Notes {
         this.status = status;
     }
 
+    public Notes() {
+
+    }
+
     public Notes(int notes_id, int time, String note, Boolean status) {
         this.notes_id = notes_id;
         this.time = time;
         this.note = note;
         this.status = status;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }
