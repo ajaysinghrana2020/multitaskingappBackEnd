@@ -18,7 +18,6 @@ public class Notes {
     int notes_id;
     int time;
     String Title;
-
     String note;
     Boolean status;
 

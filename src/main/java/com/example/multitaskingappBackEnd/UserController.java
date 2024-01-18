@@ -18,7 +18,9 @@ public class UserController {
     @PostMapping(path ="/add")
     public ResponseEntity<Users> addNewUser(@RequestBody Users users){
         Users user1=new Users();
-        user1.setName(users.getName());
+        user1.setFname(users.getFname());
+        user1.setLname(users.getLname());
+        user1.setPassword(users.getPassword());
         user1.setEmail(users.getEmail());
         return ResponseEntity.ok(userRepository.save(user1));
     }
