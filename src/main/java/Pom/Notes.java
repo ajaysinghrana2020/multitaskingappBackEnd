@@ -1,5 +1,6 @@
-package com.example.multitaskingappBackEnd;
+package Pom;
 
+import Controller.UserController;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

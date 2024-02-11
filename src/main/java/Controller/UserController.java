@@ -1,11 +1,15 @@
-package com.example.multitaskingappBackEnd;
+package Controller;
 
-import org.apache.catalina.User;
+
+import Pom.Users;
+import Repo.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 
-import javax.imageio.ImageTranscoder;
+
 
 @RestController
 @CrossOrigin(value = "*")
@@ -29,6 +33,7 @@ public class UserController {
     public ResponseEntity<Iterable> getAllUsers(){
         return ResponseEntity.ok(userRepository.findAll());
     }
+
 
 
 }
