@@ -1,6 +1,6 @@
-package Repo;
+package com.example.multitaskingappBacEnd.Repo;
 
-import Pom.Notes;
+import com.example.multitaskingappBacEnd.Pom.Notes;
 import org.springframework.data.repository.CrudRepository;
 
 public interface NotesRepository extends CrudRepository<Notes,Integer> {

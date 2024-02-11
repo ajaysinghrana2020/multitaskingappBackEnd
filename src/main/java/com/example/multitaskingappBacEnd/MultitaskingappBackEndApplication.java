@@ -1,4 +1,4 @@
-package com.example.multitaskingappBackEnd;
+package com.example.multitaskingappBacEnd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

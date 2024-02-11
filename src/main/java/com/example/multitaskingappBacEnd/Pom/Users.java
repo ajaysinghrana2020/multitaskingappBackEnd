@@ -1,4 +1,4 @@
-package Pom;
+package com.example.multitaskingappBacEnd.Pom;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -15,7 +15,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "user1")
+@Table(name = "user3")
 @Entity
 public class Users {
     @Id
@@ -26,11 +26,11 @@ public class Users {
     String email;
     String password;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "users")
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy ="users")
     @JsonIgnore
     private Set<UserRole> userRoles=new HashSet<>();
 
 
-    @OneToMany(mappedBy = "users")
-    private List<Notes> notes;
+//    @OneToMany(mappedBy = "users")
+//    private List<Notes> notes;
 }

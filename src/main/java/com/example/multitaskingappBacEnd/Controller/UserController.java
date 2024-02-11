@@ -1,8 +1,8 @@
-package Controller;
+package com.example.multitaskingappBacEnd.Controller;
 
 
-import Pom.Users;
-import Repo.UserRepository;
+import com.example.multitaskingappBacEnd.Pom.Users;
+import com.example.multitaskingappBacEnd.Repo.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

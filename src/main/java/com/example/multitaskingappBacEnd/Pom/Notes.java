@@ -1,6 +1,5 @@
-package Pom;
+package com.example.multitaskingappBacEnd.Pom;
 
-import Controller.UserController;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "notes")
+@Table(name = "notes1")
 @Entity
 public class Notes {
     @Id
@@ -22,8 +21,8 @@ public class Notes {
     String note;
     Boolean status;
 
-    @ManyToOne
-    private Users users;
+//    @ManyToOne
+//    private Users users;
 }
 
 

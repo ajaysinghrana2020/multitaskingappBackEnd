@@ -1,11 +1,11 @@
-package Pom;
+package com.example.multitaskingappBacEnd.Pom;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
+//import org.springframework.data.annotation.Id;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,13 +14,13 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "roles1")
 @Entity
-@Table(name = "roles")
 public class Role {
     @Id
-    private int roleId;
-    private String roleName;
+     int roleId;
+     String roleName;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy ="role")
     private Set<UserRole> userRoles=new HashSet<>();
 }

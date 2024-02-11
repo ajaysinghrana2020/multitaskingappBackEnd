@@ -1,4 +1,4 @@
-package com.example.multitaskingappBackEnd;
+package com.example.multitaskingappBacEnd.Controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

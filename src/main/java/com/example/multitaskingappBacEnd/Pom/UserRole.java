@@ -1,4 +1,4 @@
-package Pom;
+package com.example.multitaskingappBacEnd.Pom;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,10 +10,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "user_role")
 @Entity
 public class UserRole {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
 
     @ManyToOne(fetch = FetchType.EAGER)
