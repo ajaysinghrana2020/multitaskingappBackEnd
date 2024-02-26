@@ -1,10 +1,12 @@
 package com.example.multitaskingappBacEnd.Pom;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +20,7 @@ public class UserRole {
     private int userId;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    private Users users;
+    private Users user;
 
     @ManyToOne
     private Role role;

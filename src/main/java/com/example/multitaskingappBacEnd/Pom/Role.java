@@ -1,12 +1,13 @@
 package com.example.multitaskingappBacEnd.Pom;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 //import org.springframework.data.annotation.Id;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
