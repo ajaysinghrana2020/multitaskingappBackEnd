@@ -2,6 +2,7 @@ package com.example.multitaskingappBacEnd.config;
 
 
 
+import com.example.multitaskingappBacEnd.service.Impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,11 +33,11 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     private JwtAuthenticationEntryPoint unauthorizedHandler;
 
     @Autowired
-    private jwtAuthenticationFilter jwtAuthenticationFilter;
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
 
 
     @Autowired
-    private UserDetailsService userDetailsServiceImpl;
+    private UserDetailsServiceImpl userDetailsServiceImpl;
 
     @Override
     @Bean

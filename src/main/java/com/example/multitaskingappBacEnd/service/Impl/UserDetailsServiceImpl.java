@@ -1,6 +1,6 @@
 package com.example.multitaskingappBacEnd.service.Impl;
 
-import com.example.multitaskingappBacEnd.Pom.Users;
+import com.example.multitaskingappBacEnd.Pom.User;
 import com.example.multitaskingappBacEnd.Repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,13 +13,16 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    Users user =this.userRepository.findByemail(username);
-    if(user==null){
-        System.out.println("User not found");
-        throw new UsernameNotFoundException("no User Found !!");
-    }
+
+        User user = this.userRepository.findByUsername(username);
+        if (user == null) {
+            System.out.println("User not found");
+            throw new UsernameNotFoundException("No user found !!");
+        }
+
         return user;
     }
 }

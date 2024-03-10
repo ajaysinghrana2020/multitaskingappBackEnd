@@ -2,9 +2,12 @@ package com.example.multitaskingappBacEnd.Repo;
 
 //import Controller.UserController;
 
-import com.example.multitaskingappBacEnd.Pom.Users;
-import org.springframework.data.repository.CrudRepository;
+import com.example.multitaskingappBacEnd.Pom.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository extends CrudRepository<Users,Integer> {
-    Users findByemail(String email);
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    public User findByUsername(String username);
 }

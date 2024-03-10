@@ -2,12 +2,11 @@ package com.example.multitaskingappBacEnd.Controller;
 
 import com.example.multitaskingappBacEnd.Pom.Role;
 import com.example.multitaskingappBacEnd.Pom.UserRole;
-import com.example.multitaskingappBacEnd.Pom.Users;
+import com.example.multitaskingappBacEnd.Pom.User;
+import com.example.multitaskingappBacEnd.helper.UserFoundException;
 import com.example.multitaskingappBacEnd.service.UserService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,19 +18,18 @@ import java.util.Set;
 @CrossOrigin("*")
 public class UserController {
 
-
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     //creating user
     @PostMapping("/")
-    public Users createUser(@RequestBody Users user) throws Exception {
+    public User createUser(@RequestBody User user) throws Exception {
 
 
-//        user.setProfile("default.png");
+        user.setProfile("default.png");
         //encoding password with bcryptpasswordencoder
 
         user.setPassword(this.bCryptPasswordEncoder.encode(user.getPassword()));
@@ -39,7 +37,7 @@ public class UserController {
         Set<UserRole> roles = new HashSet<>();
 
         Role role = new Role();
-        role.setRoleId(0);
+        role.setRoleId(45L);
         role.setRoleName("NORMAL");
 
         UserRole userRole = new UserRole();
@@ -54,7 +52,7 @@ public class UserController {
     }
 
     @GetMapping("/{username}")
-    public Users getUser(@PathVariable("username") String username) {
+    public User getUser(@PathVariable("username") String username) {
         return this.userService.getUser(username);
     }
 
@@ -68,8 +66,8 @@ public class UserController {
     //update api
 
 
-    @ExceptionHandler(UsernameNotFoundException.class)
-    public ResponseEntity<?> exceptionHandler(UsernameNotFoundException ex) {
+    @ExceptionHandler(UserFoundException.class)
+    public ResponseEntity<?> exceptionHandler(UserFoundException ex) {
         return ResponseEntity.ok(ex.getMessage());
     }
 
