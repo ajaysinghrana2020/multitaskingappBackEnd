@@ -69,6 +69,9 @@ public class AuthenticateController {
         } catch (BadCredentialsException e) {
             throw new Exception("Invalid Credentials " + e.getMessage());
         }
+        catch (Exception e){
+            throw new Exception("kuch samaj ni aa ra "+e.getMessage());
+         }
     }
 
     //return the details of current user
