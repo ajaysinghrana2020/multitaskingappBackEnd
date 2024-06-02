@@ -21,6 +21,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     //creating user
     @PostMapping("/")
@@ -29,13 +31,15 @@ public class UserController {
 
         user.setProfile("default.png");
         //encoding password with bcryptpasswordencoder
+        user.setPassword(this.bCryptPasswordEncoder.encode(user.getPassword()));
 
         user.setPassword((user.getPassword()));
 
         Set<UserRole> roles = new HashSet<>();
+        //encoding password with password incoder
 
         Role role = new Role();
-        role.setRoleId(45L);
+        role.setRoleId(40L);
         role.setRoleName("NORMAL");
 
         UserRole userRole = new UserRole();
